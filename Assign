@@ -1,0 +1,107 @@
+
+//sahil
+List<int> convertNumberToList(int number) {
+  List<int> list = [];
+  
+  while (number > 0) {
+    list.insert(0, number % 10);
+    number = number ~/ 10;
+  }
+  
+  return list;
+}
+
+List<List<int>> evenOddList(List<int> numbers) {
+    List<int> even = [];
+    List<int> odd = [];
+
+    for(var i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 == 0) {
+            even.add(numbers[i]);
+        }
+        else {
+            odd.add(numbers[i]);
+        }
+    }
+
+    return [even, odd];
+}
+
+void main() {
+  int number = 12345;
+  List<int> numberList = convertNumberToList(number);
+  
+  print('Number: $number');
+  print('List: $numberList');
+
+  List<List<int>> result = evenOddList(numberList);
+  print('Even List: ${result[0]}');
+  print('Odd List: ${result[1]}');
+}
+
+
+
+
+//nikhil
+
+
+void dgt(int n, List lst, List evenList, List oddList) {
+  if (n == 0) {
+    return;
+  }
+
+  int digit = n % 10;
+  lst.add(digit);
+  
+  if (digit % 2 == 0) {
+    evenList.add(digit);
+  } else {
+    oddList.add(digit);
+  }
+  
+  dgt(n ~/ 10, lst, evenList, oddList);
+}
+void main() {
+  int n1 = 1352643;
+
+  List<int> lst = [];
+  List<int> evenList = [];
+  List<int> oddList = [];
+
+  dgt(n1, lst, evenList, oddList);
+
+  print('List = $lst');
+  print('Even List = $evenList');
+  print('Odd List = $oddList');
+  print('Final List = $evenList $oddList');
+}
+
+
+//nitesh
+
+void main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  List<int> evenNumbers = [];
+  List<int> oddNumbers = [];
+   List<int> finallist = [];
+  for (int number in numbers) {
+    if (number % 2 == 0) {
+      evenNumbers.add(number);
+    }
+  }
+
+  print(evenNumbers);
+
+
+  for (int number in numbers) {
+    if (number % 2 != 0) {
+      oddNumbers.add(number);
+    }
+  }
+   print(oddNumbers); 
+  
+
+  finallist.addAll(oddNumbers);
+  finallist.addAll(evenNumbers);
+
+  print('Final List: $finallist');
