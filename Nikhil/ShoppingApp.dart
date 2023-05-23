@@ -63,7 +63,6 @@ void main() {
               } else {
                 for (int i = 0; i < addedProducts.length; i++) {
                   if (pro == addedProducts[i]) {
-                    int q_pos = i;
                     addedQuantities[i] = addedQuantities[i] + q;
                   }
                 }
