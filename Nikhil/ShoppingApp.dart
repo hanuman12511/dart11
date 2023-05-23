@@ -13,8 +13,9 @@ void main() {
   String username = input("enter name");
   if (users.contains(username)) {
     print("user login");
+    var r = false;
     String p = '';
-    bool r = false;
+    // bool r = false;
     for (int i = 0; i < users.length; i++) {
       if (username == users[i]) {
         r = true;
