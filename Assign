@@ -111,3 +111,31 @@ void main() {
   finallist.addAll(evenNumbers);
 
   print('Final List: $finallist');
+
+  // meet odd/even assignment
+import 'dart:io';
+void main() {
+  print("Enter number");
+  int n = int.parse(stdin.readLineSync()!);
+  int temp = 0;
+  List<int> ln = [];
+  List<int> en = [];
+  List<int> on = [];
+  List<int> eon = [];
+  while (n != 0) {
+    temp = n % 10;
+    int even = temp % 2;
+    if (even == 0) {
+      en.insert(0, temp);
+    } else {
+      on.insert(0, temp);
+    }
+    ln.insert(0, temp);
+    n = n ~/ 10;
+    eon = on + en;
+  }
+  print(ln);
+  print(en);
+  print(on);
+  print(eon);
+}
