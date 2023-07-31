@@ -7,7 +7,6 @@ List passworduser = ["1234", "1111"];
 void line() {
   print("*********************************************************");
 }
-// checking git rep0
 addcart() {
   print("Enter the product name you want to add to cart");
   var productnameincart = stdin.readLineSync();
